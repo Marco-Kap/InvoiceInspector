@@ -1,0 +1,50 @@
+{
+  "name": "invoiceinspector",
+  "version": "1.0.0",
+  "description": "InvoiceInspector Desktop - E-Rechnungs-Viewer für ZUGFeRD, XRechnung, Factur-X",
+  "main": "dist/index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "",
+    "build": "",
+    "tauri": "cd src-tauri && cargo tauri dev",
+    "tauri:build": "cd src-tauri && cargo tauri build",
+    "tauri:build:windows": "cd src-tauri && cargo tauri build --target x86_64-pc-windows-msvc",
+    "tauri:build:bundle": "cd src-tauri && cargo tauri bundle"
+  },
+  "keywords": [
+    "invoice",
+    "e-invoice",
+    "ZUGFeRD",
+    "XRechnung",
+    "Factur-X",
+    "UBL",
+    "Peppol",
+    "XML",
+    "PDF",
+    "viewer",
+    "desktop"
+  ],
+  "author": "Simon Waldherr <simon@waldherr.eu>",
+  "license": "GPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Marco-Kap/InvoiceInspector"
+  },
+  "homepage": "https://github.com/Marco-Kap/InvoiceInspector#readme",
+  "bugs": {
+    "url": "https://github.com/Marco-Kap/InvoiceInspector/issues"
+  },
+  "dependencies": {
+    "@tauri-apps/cli": "^2.12.3",
+    "@tauri-apps/api": "^2.12.3"
+  },
+  "devDependencies": {
+    "@tauri-apps/plugin-dialog": "^2.0.0",
+    "@tauri-apps/plugin-fs": "^2.0.0",
+    "@tauri-apps/plugin-log": "^2.0.0",
+    "@tauri-apps/plugin-os": "^2.0.0",
+    "@tauri-apps/plugin-path": "^2.0.0",
+    "@tauri-apps/plugin-shell": "^2.0.0"
+  }
+}

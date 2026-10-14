@@ -1,4 +1,32 @@
-nohup.out
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+target/
+
+# Tauri
+src-tauri/target/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
 *.log
-test-invoice.xml
-data/
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Tauri specific
+/src-tauri/gen/

@@ -1,0 +1,22 @@
+[package]
+name = "invoiceinspector"
+version = "1.0.0"
+description = "InvoiceInspector Desktop - E-Rechnungs-Viewer für ZUGFeRD, XRechnung, Factur-X"
+authors = ["Simon Waldherr", "Marco-Kap"]
+license = "GPL-2.0"
+repository = "https://github.com/Marco-Kap/InvoiceInspector"
+edition = "2021"
+rust-version = "1.70"
+
+[lib]
+name = "invoiceinspector_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.7.2" }
+
+[dependencies]
+tauri = { version = "2.12.3" }
+
+[features]
+default = []

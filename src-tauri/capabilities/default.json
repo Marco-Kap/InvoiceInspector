@@ -1,0 +1,71 @@
+{
+  "identifier": "invoiceinspector",
+  "description": "InvoiceInspector Desktop - E-Rechnungs-Viewer",
+  "permissions": [
+    {
+      "identifier": "file_system",
+      "description": "Access to file system for opening XML and PDF files",
+      "permissions": [
+        {
+          "identifier": "read",
+          "description": "Read XML and PDF files",
+          "allow": [
+            {
+              "name": "XML Files",
+              "pattern": ["*.xml", "*.XML"],
+              "description": "Read XML invoice files"
+            },
+            {
+              "name": "PDF Files",
+              "pattern": ["*.pdf", "*.PDF"],
+              "description": "Read PDF files with embedded XML invoices"
+            },
+            {
+              "name": "All Files",
+              "pattern": ["*"],
+              "description": "Read any file"
+            }
+          ]
+        },
+        {
+          "identifier": "write",
+          "description": "Save files",
+          "allow": [
+            {
+              "name": "Save Files",
+              "pattern": ["*"],
+              "description": "Save processed files"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "dialog",
+      "description": "Show file dialogs",
+      "permissions": [
+        {
+          "identifier": "open",
+          "description": "Open file dialog",
+          "allow": true
+        },
+        {
+          "identifier": "save",
+          "description": "Save file dialog",
+          "allow": true
+        }
+      ]
+    },
+    {
+      "identifier": "shell",
+      "description": "Open files with default applications",
+      "permissions": [
+        {
+          "identifier": "open",
+          "description": "Open files with default application",
+          "allow": true
+        }
+      ]
+    }
+  ]
+}
