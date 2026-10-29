@@ -1,0 +1,56 @@
+{
+  "name": "marcos_E-Invoice_Viewer",
+  "version": "1.0.0",
+  "description": "Windows Desktop wrapper for InvoiceInspector e-invoice viewer",
+  "main": "main.js",
+  "author": "Local build",
+  "license": "GPL-2.0-only",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^36.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "de.invoiceinspector.desktop",
+    "productName": "marcos-E-Invoice-Viewer",
+    "asar": true,
+    "files": [
+      "index.html",
+      "main.js",
+      "preload.js",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "Marcos E-Invoice Viewer-Setup-${version}.${ext}",
+      "fileAssociations": [
+        {
+          "ext": "xml",
+          "name": "XML-Rechnung",
+          "description": "Elektronische Rechnung (XML)",
+          "role": "Editor"
+        },
+        {
+          "ext": "pdf",
+          "name": "PDF-Rechnung",
+          "description": "PDF-Rechnung",
+          "role": "Viewer"
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
