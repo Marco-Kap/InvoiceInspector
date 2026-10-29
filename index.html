@@ -1598,6 +1598,217 @@
       overflow-wrap: anywhere
     }
 
+    /* Classic Invoice Layout Styles */
+    .classic-invoice-layout {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      box-shadow: 0 2px 4px var(--shadow);
+      padding: 20px;
+    }
+
+    .classic-invoice-layout .invoice-header-block {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    .classic-invoice-layout .invoice-title {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .classic-invoice-layout .invoice-title h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .classic-invoice-layout .invoice-meta {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .classic-invoice-layout .invoice-meta dt {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+    }
+
+    .classic-invoice-layout .invoice-meta dd {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .classic-invoice-layout .addresses-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .classic-invoice-layout .address-box {
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .classic-invoice-layout .address-box h3 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 5px;
+    }
+
+    .classic-invoice-layout .address-box p {
+      margin: 4px 0;
+      line-height: 1.5;
+    }
+
+    .classic-invoice-layout .line-items-classic {
+      margin: 20px 0;
+    }
+
+    .classic-invoice-layout .line-items-classic table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+
+    .classic-invoice-layout .line-items-classic th {
+      background: var(--thead);
+      border: 1px solid var(--border);
+      padding: 10px;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .classic-invoice-layout .line-items-classic td {
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      vertical-align: top;
+    }
+
+    .classic-invoice-layout .line-items-classic tr:nth-child(even) {
+      background: var(--pre);
+    }
+
+    .classic-invoice-layout .line-items-classic tr:hover {
+      background: var(--dragbg);
+    }
+
+    .classic-invoice-layout .totals-block {
+      border-top: 2px solid var(--border);
+      padding-top: 15px;
+      margin-top: 20px;
+    }
+
+    .classic-invoice-layout .totals-block .totals-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .classic-invoice-layout .totals-block .totals-table td {
+      border: 1px solid var(--border);
+      padding: 10px;
+    }
+
+    .classic-invoice-layout .totals-block .totals-table td:last-child {
+      text-align: right;
+      font-weight: 700;
+      width: 200px;
+    }
+
+    .classic-invoice-layout .totals-block .totals-table .total-label {
+      font-weight: 700;
+      background: var(--thead);
+    }
+
+    .classic-invoice-layout .payment-info-block {
+      margin-top: 20px;
+      border-top: 1px solid var(--border);
+      padding-top: 15px;
+    }
+
+    .classic-invoice-layout .payment-info-block h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .classic-invoice-layout .payment-info-block .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+    }
+
+    .classic-invoice-layout .payment-info-block .payment-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .classic-invoice-layout .payment-info-block .payment-item:last-child {
+      border-bottom: none;
+    }
+
+    .classic-invoice-layout .payment-info-block .payment-item dt {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .classic-invoice-layout .payment-info-block .payment-item dd {
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .classic-invoice-layout .qr-code-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    @media (max-width: 768px) {
+      .classic-invoice-layout .addresses-block {
+        grid-template-columns: 1fr;
+      }
+      .classic-invoice-layout .payment-info-block .payment-grid {
+        grid-template-columns: 1fr;
+      }
+      .classic-invoice-layout .totals-block .totals-table td:last-child {
+        width: auto;
+      }
+    }
+
+    @media print {
+      .classic-invoice-layout {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: none;
+      }
+      .classic-invoice-layout .invoice-meta dd {
+        color: #000;
+      }
+      .classic-invoice-layout .address-box {
+        border-color: #ccc;
+      }
+      .classic-invoice-layout .line-items-classic th,
+      .classic-invoice-layout .line-items-classic td {
+        border-color: #ccc;
+      }
+      .classic-invoice-layout .totals-block .totals-table td {
+        border-color: #ccc;
+      }
+    }
+
     .invoice-nav {
       display: flex;
       gap: 8px;
@@ -1892,32 +2103,124 @@
     </div>
   </section>
 
-  <section id="invoiceOverview" class="invoice-overview hidden" tabindex="-1" aria-labelledby="currentInvoiceNumber">
-    <div class="invoice-heading">
-      <div><span class="invoice-eyebrow" data-i18n="currentInvoice">Geöffnete Rechnung</span>
-        <h2 id="currentInvoiceNumber"></h2>
+    <section id="invoiceOverview" class="invoice-overview hidden classic-invoice-layout" tabindex="-1" aria-labelledby="currentInvoiceNumber">
+    <div class="invoice-header-block">
+      <div class="invoice-title">
+        <h2 id="currentInvoiceNumber" data-i18n="invoice">RECHNUNG</h2>
         <p id="currentInvoiceParties" class="muted"></p>
       </div>
-      <button id="closeInvoice" class="pill no-print" type="button" data-i18n="closeInvoice">Rechnung schließen</button>
+      <div class="invoice-meta">
+        <div>
+          <dt data-i18n="invNumber">Rechnungsnummer</dt>
+          <dd id="overviewInvNumber"></dd>
+        </div>
+        <div>
+          <dt data-i18n="invDate">Rechnungsdatum</dt>
+          <dd id="overviewInvDate"></dd>
+        </div>
+        <div>
+          <dt data-i18n="invDueDate">Fälligkeitsdatum</dt>
+          <dd id="overviewDueDate"></dd>
+        </div>
+      </div>
     </div>
-    <dl class="invoice-totals">
-      <div>
-        <dt data-i18n="netAmount">Gesamt netto</dt>
-        <dd id="overviewNet"></dd>
+
+    <div class="addresses-block">
+      <div class="address-box">
+        <h3 data-i18n="sellerInfo">Verkäufer</h3>
+        <p id="overviewSellerName" class="seller-name"></p>
+        <p id="overviewSellerAddress"></p>
+        <p id="overviewSellerEmail"></p>
+        <p id="overviewSellerPhone"></p>
+        <p id="overviewSellerTaxID"></p>
+        <p id="overviewSellerRegister"></p>
       </div>
-      <div>
-        <dt data-i18n="grossAmount">Gesamt brutto</dt>
-        <dd id="overviewGross"></dd>
+      <div class="address-box">
+        <h3 data-i18n="buyerInfo">Käufer</h3>
+        <p id="overviewBuyerName" class="buyer-name"></p>
+        <p id="overviewBuyerAddress"></p>
+        <p id="overviewBuyerAddress2"></p>
+        <p id="overviewBuyerEmail"></p>
+        <p id="overviewBuyerPhone"></p>
+        <p id="overviewBuyerTaxID"></p>
       </div>
-      <div>
-        <dt data-i18n="dueAmount">Fälliger Betrag</dt>
-        <dd id="overviewDue"></dd>
+    </div>
+
+    <div class="line-items-classic" id="lineItemsClassicSection">
+      <h3 data-i18n="lineItems">Positionen</h3>
+      <div class="table-wrap">
+        <table id="lineItemsClassicTable">
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="posNr">Pos.</th>
+              <th scope="col" data-i18n="productName">Produkt</th>
+              <th scope="col" data-i18n="description">Beschreibung</th>
+              <th scope="col" data-i18n="quantity">Menge</th>
+              <th scope="col" data-i18n="unit">Einheit</th>
+              <th scope="col" data-i18n="unitPrice">Einzelpreis</th>
+              <th scope="col" data-i18n="lineNet">Netto</th>
+            </tr>
+          </thead>
+          <tbody id="lineItemsClassicBody"></tbody>
+        </table>
       </div>
-      <div>
-        <dt data-i18n="invDueDate">Fälligkeitsdatum</dt>
-        <dd id="overviewDueDate"></dd>
+    </div>
+
+    <div class="totals-block">
+      <h3 data-i18n="totals">Summen</h3>
+      <table class="totals-table">
+        <tbody>
+          <tr>
+            <td class="total-label" data-i18n="netAmount">Gesamt netto</td>
+            <td id="overviewNet"></td>
+          </tr>
+          <tr>
+            <td class="total-label" data-i18n="taxAmount">Steuerbetrag</td>
+            <td id="overviewTax"></td>
+          </tr>
+          <tr>
+            <td class="total-label" data-i18n="grossAmount">Gesamt brutto</td>
+            <td id="overviewGross"></td>
+          </tr>
+          <tr>
+            <td class="total-label" data-i18n="dueAmount">Fälliger Betrag</td>
+            <td id="overviewDue"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="payment-info-block">
+      <h3 data-i18n="paymentInfo">Zahlungsinformationen</h3>
+      <div class="payment-grid">
+        <div class="payment-item">
+          <dt data-i18n="currency">Währung</dt>
+          <dd id="overviewCurrency"></dd>
+        </div>
+        <div class="payment-item">
+          <dt data-i18n="paymentType">Zahlungsart</dt>
+          <dd id="overviewPaymentType"></dd>
+        </div>
+        <div class="payment-item">
+          <dt data-i18n="paymentTerms">Zahlungsziel</dt>
+          <dd id="overviewPaymentTerms"></dd>
+        </div>
+        <div class="payment-item">
+          <dt data-i18n="iban">IBAN</dt>
+          <dd id="overviewIban"></dd>
+        </div>
+        <div class="payment-item">
+          <dt data-i18n="bic">BIC</dt>
+          <dd id="overviewBic"></dd>
+        </div>
+        <div class="payment-item">
+          <dt data-i18n="accountHolder">Kontoinhaber</dt>
+          <dd id="overviewAccountHolder"></dd>
+        </div>
       </div>
-    </dl>
+      <div id="overviewQrCode" class="qr-code-container no-print"></div>
+    </div>
+
     <nav id="invoiceNavigation" class="invoice-nav no-print" aria-label="Rechnungsbereiche">
       <a class="pill" href="#headerSection" data-i18n="invoiceInfo">Rechnungsinformationen</a>
       <a class="pill" href="#paymentSection" data-i18n="paymentInfo">Zahlungsinformationen</a>
@@ -1929,11 +2232,9 @@
     <div class="btns hidden" id="downloadButtons">
       <button id="btnXml" class="btn" type="button" data-i18n="downloadXml" aria-label="XML speichern">📄 XML</button>
       <button id="btnPdf" class="btn" type="button" data-i18n="downloadPdf" aria-label="PDF speichern">📋 PDF</button>
-      <button id="btnJson" class="btn" type="button" data-i18n="downloadJson" aria-label="JSON exportieren">📊
-        JSON</button>
+      <button id="btnJson" class="btn" type="button" data-i18n="downloadJson" aria-label="JSON exportieren">📊 JSON</button>
       <button id="btnCsv" class="btn" type="button" data-i18n="downloadCsv" aria-label="CSV exportieren">📈 CSV</button>
-      <button id="btnPrint" class="btn" type="button" data-i18n="downloadPrint" aria-label="Drucken">🖨️
-        Drucken</button>
+      <button id="btnPrint" class="btn" type="button" data-i18n="downloadPrint" aria-label="Drucken">🖨️ Drucken</button>
     </div>
 
     <p id="sourceAvailability" class="muted no-print"></p>
@@ -6032,6 +6333,10 @@
         section.scrollIntoView({ block: "start", behavior: "instant" });
       }
       function updateInvoiceOverview(d) {
+        // Update classic invoice layout
+        updateClassicInvoiceLayout(d);
+        
+        // Keep existing functionality
         $("currentInvoiceNumber").textContent = d.header?.number || L().unnumberedInvoice;
         $("currentInvoiceParties").textContent = [d.seller?.name, d.buyer?.name].filter(Boolean).join(" → ");
         const currency = d.payment?.currency || "";
@@ -6051,6 +6356,71 @@
         dom.btnCsv.title = dom.btnCsv.disabled ? L().noPositionsToExport : L().downloadCsv;
         $("sourceAvailability").textContent = L()[originalPdfBlob ? "pdfSourceHint" : (originalXmlBlob || xmlDoc) ? "xmlSourceHint" : "savedSourceHint"];
         show($("invoiceOverview"));
+      }
+      
+      function updateClassicInvoiceLayout(d) {
+        // Invoice header
+        const invNumber = d.header?.number || L().unnumberedInvoice;
+        const invDate = d.header?.date || "";
+        const invDueDate = d.header?.dueDate || "";
+        
+        $("overviewInvNumber").textContent = invNumber;
+        $("overviewInvDate").textContent = invDate;
+        $("overviewDueDate").textContent = invDueDate;
+        
+        // Seller info
+        $("overviewSellerName").textContent = d.seller?.name || "";
+        $("overviewSellerAddress").textContent = d.seller?.address || "";
+        $("overviewSellerEmail").textContent = d.seller?.email || "";
+        $("overviewSellerPhone").textContent = d.seller?.phone || "";
+        $("overviewSellerTaxID").textContent = d.seller?.taxId || "";
+        $("overviewSellerRegister").textContent = d.seller?.register || "";
+        
+        // Buyer info
+        $("overviewBuyerName").textContent = d.buyer?.name || "";
+        $("overviewBuyerAddress").textContent = d.buyer?.address || "";
+        $("overviewBuyerAddress2").textContent = d.buyer?.address2 || "";
+        $("overviewBuyerEmail").textContent = d.buyer?.email || "";
+        $("overviewBuyerPhone").textContent = d.buyer?.phone || "";
+        $("overviewBuyerTaxID").textContent = d.buyer?.taxId || "";
+        
+        // Payment info
+        const currency = d.payment?.currency || "EUR";
+        const sym = getCurSym(currency);
+        $("overviewCurrency").textContent = currency;
+        $("overviewPaymentType").textContent = d.payment?.type || "";
+        $("overviewPaymentTerms").textContent = d.payment?.terms || "";
+        $("overviewIban").textContent = d.payment?.iban || "";
+        $("overviewBic").textContent = d.payment?.bic || "";
+        $("overviewAccountHolder").textContent = d.payment?.accountHolder || "";
+        
+        // Totals
+        $("overviewNet").textContent = (d.payment?.netAmount != null) ? fmtMoney(d.payment.netAmount, sym) : "—";
+        $("overviewTax").textContent = (d.payment?.taxAmount != null) ? fmtMoney(d.payment.taxAmount, sym) : "—";
+        $("overviewGross").textContent = (d.payment?.grossAmount != null) ? fmtMoney(d.payment.grossAmount, sym) : "—";
+        $("overviewDue").textContent = (d.payment?.dueAmount != null) ? fmtMoney(d.payment.dueAmount, sym) : "—";
+        
+        // Line items
+        const tb = $("lineItemsClassicBody");
+        if (tb) {
+          tb.innerHTML = "";
+          (d.lineItems || []).forEach(li => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td>${escapeHtml(li.position)}</td>
+              <td>${escapeHtml(li.productName)}</td>
+              <td>${escapeHtml(li.description)}</td>
+              <td>${escapeHtml(typeof li.quantity === "number" ? li.quantity.toFixed(2) : (li.quantity ?? ""))}</td>
+              <td>${escapeHtml(li.unit)}</td>
+              <td>${escapeHtml(fmtMoney(li.unitPrice, sym))}</td>
+              <td>${escapeHtml(fmtMoney(li.lineNet, sym))}</td>
+            `;
+            tb.appendChild(tr);
+          });
+        }
+        
+        // QR Code
+        buildQrIfPossible(d, sym);
       }
       $("invoiceNavigation").addEventListener("click", event => {
         const link = event.target.closest("a[href^='#']"); if (!link) return;
