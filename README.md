@@ -1,3 +1,32 @@
+# InvoiceInspector Desktop für Windows
+
+Diese Hülle verpackt die mitgelieferte `index.html` als eigenständiges Electron-Fenster und registriert XML- und PDF-Dateien als Dateitypen, die Windows dem Programm zum Öffnen anbieten kann.
+
+## Installer bauen
+
+Voraussetzungen: Windows 10/11, Node.js LTS (inkl. npm) und Internetzugang für den erstmaligen Download der Build-Abhängigkeiten.
+
+1. Entpacke den Ordner.
+2. Öffne PowerShell in diesem Ordner.
+3. Führe aus:
+
+   ```powershell
+   npm install
+   npm run dist
+   ```
+
+4. Der Installer liegt anschließend in `dist\InvoiceInspector-Setup-1.0.0.exe`.
+5. Installiere ihn. Beim ersten Öffnen einer XML- oder PDF-Datei kannst du unter Windows **Öffnen mit** → **InvoiceInspector** wählen und bei Bedarf als Standard festlegen.
+
+## Hinweise
+
+- Die Dateizuordnung wird beim Installieren registriert; Windows kann trotzdem eine ausdrückliche Bestätigung für die Standard-App verlangen.
+- PDF- und XML-Dateien werden lokal an die App übergeben. Die App selbst verarbeitet Rechnungsdateien im Webview; sie lädt sie nicht allein durch das Öffnen auf einen Server hoch.
+- Die vorhandene HTML-Datei lädt PDF.js derzeit von einem CDN. Daher ist die PDF.js-Komponente beim ersten bzw. bei jedem Start mit Internetzugang verfügbar; die Anwendung ist nicht vollständig offline, solange diese Bibliothek nicht lokal mit ausgeliefert wird.
+- Dies ist ein Projektpaket, kein bereits signierter oder fertig kompilierter Installer. Ein Windows-Installer muss mit den oben genannten Befehlen gebaut werden.
+- Bei Updates/Verteilung in einer Windows-Domäne kann der erzeugte Installer über deine übliche Softwareverteilung ausgerollt werden. Dateizuordnungen können je nach Windows-Richtlinien zentral vorgegeben werden.
+
+
 # InvoiceInspector
 
 [![DOI](https://zenodo.org/badge/900334942.svg)](https://doi.org/10.5281/zenodo.15257729) 

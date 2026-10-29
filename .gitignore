@@ -2,3 +2,4 @@ nohup.out
 *.log
 test-invoice.xml
 data/
+/node_modules/
